@@ -1203,3 +1203,366 @@ Processing by PersonsController#index as HTML
 Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.2ms | Allocations: 11146)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.3ms)[0m  [1m[32mINSERT INTO "people" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2022-03-21 05:18:04.943905"], ["updated_at", "2022-03-21 05:18:04.943905"]]
+  [1m[36mTRANSACTION (43.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2022-03-21 15:30:21 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.7.4/gems/railties-6.1.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.4/gems/railties-6.1.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 28.3ms | Allocations: 328)
+Completed 200 OK in 56ms (Views: 31.0ms | ActiveRecord: 0.0ms | Allocations: 2393)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:30:48 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.erb:4
+  Rendered persons/index.html.erb within layouts/application (Duration: 26.4ms | Allocations: 16200)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 20755)
+Completed 200 OK in 38ms (Views: 34.7ms | ActiveRecord: 1.2ms | Allocations: 22203)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:31:27 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.erb:4
+  Rendered persons/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 6715)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 9596)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms | Allocations: 9988)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:31:28 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.erb:4
+  Rendered persons/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 6724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 9607)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.2ms | Allocations: 10005)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:31:29 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.erb:4
+  Rendered persons/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 6724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 9607)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.1ms | Allocations: 10005)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:31:30 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.erb:4
+  Rendered persons/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 6724)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 9607)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 10006)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:31:31 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.erb:4
+  Rendered persons/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 6714)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 9603)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 9992)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:31:32 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.erb:4
+  Rendered persons/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 6714)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 9600)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.2ms | Allocations: 9988)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.3ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (34.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.3ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 2]]
+  [1m[36mTRANSACTION (51.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.4ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 3]]
+  [1m[36mTRANSACTION (58.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.4ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 4]]
+  [1m[36mTRANSACTION (58.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.2ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (62.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.4ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (72.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.4ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 7]]
+  [1m[36mTRANSACTION (53.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.5ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (18.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.3ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 11]]
+  [1m[36mTRANSACTION (66.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.5ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 12]]
+  [1m[36mTRANSACTION (67.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Destroy (0.4ms)[0m  [1m[31mDELETE FROM "people" WHERE "people"."id" = ?[0m  [["id", 13]]
+  [1m[36mTRANSACTION (82.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:31:56 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.erb:4
+  Rendered persons/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 663)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3548)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms | Allocations: 3936)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:34:10 +0300
+Processing by PersonsController#index as HTML
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms | Allocations: 1881)
+
+
+  
+ActionController::MissingExactTemplate (PersonsController#index is missing a template for request formats: text/html):
+  
+actionpack (6.1.5) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.1.5) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.1.5) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.1.5) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.5) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.5) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.5) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.5) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.5) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.5) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.5) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.5) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.5) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.5) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.5) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.5) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.5) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.5) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.5) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.5) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.5) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.5) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.5) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.5) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.5) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.5) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.5) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.5) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.5) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.5) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.5) lib/rails/engine.rb:539:in `call'
+puma (5.6.2) lib/puma/configuration.rb:252:in `call'
+puma (5.6.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.2) lib/puma/server.rb:441:in `process_client'
+puma (5.6.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:34:20 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 14.3ms | Allocations: 10530)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 15093)
+Completed 200 OK in 51ms (Views: 43.1ms | ActiveRecord: 0.2ms | Allocations: 17972)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:34:54 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 6.8ms | Allocations: 3552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 6613)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.1ms | Allocations: 7729)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:34:56 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 2.1ms | Allocations: 670)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3552)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 3939)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:42:16 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/persons/index.html.slim:4
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 4.1ms | Allocations: 1391)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4281)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.5ms | Allocations: 4670)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:42:17 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 1.9ms | Allocations: 670)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3552)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 3939)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:42:17 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 2.7ms | Allocations: 678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3562)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms | Allocations: 3960)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:42:18 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 2.2ms | Allocations: 678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3562)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 3960)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:42:49 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 15.4ms | Allocations: 10979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.3ms | Allocations: 15542)
+Completed 200 OK in 54ms (Views: 44.5ms | ActiveRecord: 0.2ms | Allocations: 18421)
+
+
+Started GET "/persons" for 127.0.0.1 at 2022-03-21 15:43:07 +0300
+Processing by PersonsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering persons/index.html.slim within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/persons/index.html.slim:4
+  Rendered persons/index.html.slim within layouts/application (Duration: 6.2ms | Allocations: 3944)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 7003)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.1ms | Allocations: 8119)
+
+

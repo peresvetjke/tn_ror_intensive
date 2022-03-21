@@ -1,9 +1,9 @@
 class Api::V1::PersonsController < Api::V1::BaseController
+  before_action :set_person, only: %i[show update destroy]
+
   def show
     respond_to do |format|
-      format.json {
-        render json: Person.find(params[:id])
-      }
+      format.json { render json: PersonSerializer.new(@person) }
     end
   end
 
@@ -11,9 +11,11 @@ class Api::V1::PersonsController < Api::V1::BaseController
     respond_to do |format|
       format.json {
         if params[:last_hours]
-          render json: Persons::RecentlyCreatedPersonsQuery.call(last_hours: params[:last_hours])
+          render json: PersonSerializer.new(
+            Persons::RecentlyCreatedPersonsQuery.call(last_hours: params[:last_hours])
+          )
         else
-          render json: Person.all
+          render json: PersonSerializer.new(Person.all)
         end
       }
     end
@@ -23,13 +25,11 @@ class Api::V1::PersonsController < Api::V1::BaseController
     respond_to do |format|
       format.json {
         @person = Person.new(person_params)
-        validation = PersonContract.new.call(person_params.to_h)
 
-        if validation.success?
-          @person.save
-          render json: @person
+        if @person.save
+          render json: PersonSerializer.new(@person), status: :created
         else
-          render json: validation.errors.to_h
+          render json: ErrorSerializer.serialize(@person.errors), status: :unprocessable_entity
         end
       }
     end
@@ -38,14 +38,10 @@ class Api::V1::PersonsController < Api::V1::BaseController
   def update
     respond_to do |format|
       format.json {
-        @person = Person.find(params[:id])
-        validation = PersonContract.new.call(@person.as_json.merge(person_params.to_h))
-
-        if validation.success?
-          @person.update(person_params)
-          render json: @person
+        if @person.update(person_params)
+          render json: PersonSerializer.new(@person)
         else
-          render json: validation.errors.to_h
+          render json: ErrorSerializer.serialize(@person.errors), status: :unprocessable_entity
         end
       }
     end
@@ -54,12 +50,16 @@ class Api::V1::PersonsController < Api::V1::BaseController
   def destroy
     respond_to do |format|
       format.json {
-        render json: Person.find(params[:id]).destroy
+        render json: @person.destroy
       }
     end
   end
 
   private
+
+  def set_person
+    @person = Person.find(params[:id])
+  end
 
   def person_params
     params.require(:person).permit(:name, :surname, :email, :age)

@@ -1,0 +1,11 @@
+h2 Persons
+
+ul
+  - if @persons.present?
+    - @persons.each do |person|
+      - present person do |person_presenter|
+        li.person
+          p = person_presenter.full_name
+          p = person_presenter.errors
+  - else
+    p = "No records yet."

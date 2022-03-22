@@ -7,11 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-5.times do |i|
-  Person.create(
-    name: "name_#{i}",
-    surname: "surname_#{i}",
-    email: "name_#{i}.surname_#{i}@example.com",
-    age: (15..40).to_a.sample
-  )
-end
+5.times { FactoryBot.create(:person) }

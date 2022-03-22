@@ -10,13 +10,18 @@ class Api::V1::PersonsController < Api::V1::BaseController
   def index
     respond_to do |format|
       format.json {
-        if params[:last_hours]
-          render json: PersonSerializer.new(
-            Persons::RecentlyCreatedPersonsQuery.call(last_hours: params[:last_hours])
-          )
-        else
-          render json: PersonSerializer.new(Person.all)
-        end
+        cache = ActiveSupport::Cache::MemoryStore.new
+        @persons = cache.fetch(Person.cache_key) do
+          PersonSerializer.new(
+            if params[:last_hours].present? 
+              Persons::RecentlyCreatedPersonsQuery.call(last_hours: params[:last_hours]) 
+            else
+              Person.all
+            end
+          ).serializable_hash.to_json
+        end    
+
+        render json: @persons
       }
     end
   end

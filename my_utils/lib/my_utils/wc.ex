@@ -6,7 +6,6 @@ defmodule MyUtils do
     path
     |> File.stream!()
     |> Enum.map(& {1, count_words(&1), byte_size(&1)})
-    |> Enum.to_list()
     |> Enum.reduce({0, 0, 0}, fn line, acc -> sum_stats(line, acc) end)
   end
 

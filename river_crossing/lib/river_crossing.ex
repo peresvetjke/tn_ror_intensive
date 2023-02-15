@@ -11,10 +11,10 @@ defmodule RiverCrossing do
   @spec loop(state()) :: any()
   def loop(state) do
     receive do
-      {from, :get_status} ->
+      {solution_finder_task, :get_status} ->
         case state do
-          :in_process -> send(from, :in_process)
-          {:done, _solution} -> send(from, :done)
+          :in_process -> send(solution_finder_task, :in_process)
+          {:done, _solution} -> send(solution_finder_task, :done)
         end
 
         loop(state)

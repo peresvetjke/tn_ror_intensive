@@ -87,7 +87,8 @@ defmodule RiverCrossing.Data.Shipment do
   def move(shipment, cargo) do
     [from, to] = [current_location(shipment), next_location(shipment)]
 
-    do_move(shipment, cargo, from, to)
+    shipment
+    |> do_move(cargo, from, to)
     |> do_move(:peasant, from, to)
   end
 

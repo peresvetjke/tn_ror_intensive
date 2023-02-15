@@ -116,7 +116,6 @@ defmodule RiverCrossing.Data.Shipment do
   end
 
   @spec valid_location?(map()) :: boolean()
-  defp valid_location?({_, %{peasant: true}}), do: true
   defp valid_location?({_, %{peasant: false, goat: true, cabbage: true}}), do: false
   defp valid_location?({_, %{peasant: false, goat: true, wolf: true}}), do: false
   defp valid_location?(_), do: true

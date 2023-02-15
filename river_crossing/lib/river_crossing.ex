@@ -2,7 +2,7 @@ defmodule RiverCrossing do
   @type state :: :in_process | {:done, map()}
 
   @spec start() :: any()
-  def(start()) do
+  def start do
     SolutionFinder.start(self())
 
     loop(:in_process)

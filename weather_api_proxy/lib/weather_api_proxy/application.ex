@@ -11,7 +11,7 @@ defmodule WeatherApiProxy.Application do
   def start(_type, _args) do
     children = [
       # Start the Ecto repository
-      WeatherApiProxy.Repo,
+      # WeatherApiProxy.Repo,
       # Start the Telemetry supervisor
       WeatherApiProxyWeb.Telemetry,
       # Start the PubSub system

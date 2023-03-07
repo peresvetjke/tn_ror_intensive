@@ -2,26 +2,23 @@ defmodule WeatherApiProxy.App.City do
   @moduledoc """
   This module is responsible for caching weather info.
   """
-  use Ecto.Schema
   use GenServer
   require Logger
 
-  alias WeatherApiProxy.App.City
+  alias WeatherApiProxy.App.{City, AccuWeatherApi}
+  @enforce_keys [:name, :code]
+  defstruct [:name, :code, :current_weather]
 
   @registry :city_registry
-  @api_key "SA5lAHPDxgRTHoGxdUEA0vOx0SrGyEPu"
 
-  @primary_key false
-  embedded_schema do
-    field :name, :string
-    field :code, :string
-    field :current_weather, :float
-  end
-
-  @spec get_weather(String.t()) :: %City{}
+  @spec get_weather(String.t()) :: {:ok, float()} | {:error, :not_found}
   def get_weather(city_name) do
     WeatherApiProxy.App.CitySupervisor.get_pid(city_name)
     |> get_state()
+    |> case do
+      %City{code: :not_found} -> {:error, :not_found}
+      %City{current_weather: current_weather} -> {:ok, current_weather}
+    end
   end
 
   ## GenServer API
@@ -57,13 +54,15 @@ defmodule WeatherApiProxy.App.City do
     schedule_work()
     Logger.info("Starting process #{city_name}")
 
-    case fetch_location_code(city_name) do
-      :not_found ->
+    case AccuWeatherApi.fetch_location_code(city_name) do
+      {:error, :not_found} ->
         {:ok, %City{name: city_name, code: :not_found}}
 
-      city_code ->
-        weather = fetch_location_weather(city_code)
-        {:ok, %City{name: city_name, code: city_code, current_weather: weather}}
+      {:ok, city_code} ->
+        case AccuWeatherApi.fetch_location_weather(city_code) do
+          {:ok, weather} -> {:ok, %City{name: city_name, code: city_code, current_weather: weather}}
+          {:error, error} -> {:error, error}
+        end
     end
   end
 
@@ -83,7 +82,7 @@ defmodule WeatherApiProxy.App.City do
           city
 
         _ ->
-          weather = fetch_location_weather(city.code)
+          weather = AccuWeatherApi.fetch_location_weather(city.code)
           %City{city | current_weather: weather}
       end
 
@@ -102,44 +101,4 @@ defmodule WeatherApiProxy.App.City do
 
   defp via_tuple(name),
     do: {:via, Registry, {@registry, name}}
-
-  defp fetch_location_weather(city_code) do
-    Logger.info("Sending request to AccuWeather (fetch weather for #{city_code})")
-
-    case HTTPoison.get(current_weather_url(city_code)) do
-      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        [%{"Temperature" => %{"Metric" => %{"Value" => temperature}}}] = Poison.decode!(body)
-        temperature
-
-      _ ->
-        Logger.info("Something went wrong :(")
-    end
-  end
-
-  defp fetch_location_code(city_name) do
-    Logger.info("Sending request to AccuWeather (fetch code for #{city_name})")
-
-    case HTTPoison.get(city_code_url(city_name)) do
-      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        case Poison.decode!(body) do
-          [%{"Key" => key} | _] ->
-            key
-
-          [] ->
-            Logger.info("AccuWeather can't find code for #{city_name}")
-            :not_found
-        end
-
-      _ ->
-        Logger.info("Something went wrong :(")
-    end
-  end
-
-  defp city_code_url(city_name) do
-    "http://dataservice.accuweather.com/locations/v1/cities/search?apikey=#{@api_key}&q=#{city_name}"
-  end
-
-  defp current_weather_url(city_code) do
-    "http://dataservice.accuweather.com/currentconditions/v1/#{city_code}?apikey=#{@api_key}"
-  end
 end
